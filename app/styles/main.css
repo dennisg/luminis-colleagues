@@ -12,3 +12,21 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+
+
+section[data-route=colleague-info] luminis-colleague-avatar {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+luminis-colleague-details {
+	padding-top: 20px;
+}
+
+@media (max-width: 660px) {
+	luminis-colleagues {
+		margin: auto;
+		width: 274px;
+	}
+}

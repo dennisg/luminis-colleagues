@@ -1,0 +1,65 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/gravatar-photo/gravatar-photo.html">
+
+<dom-module id="luminis-colleague-avatar">
+  <template>
+    <style>
+        :host {
+            display: block;
+        }
+    </style>
+    <!-- rest of the styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <div class="profile">
+      <gravatar-photo id='gravatar' email="[[item.email]]" size="75"></gravatar-photo>
+      <a href="[[href]]">
+        <span class="name">[[item.name]]</span>
+        <span class="email">[[item.email]]</span>
+        <span class="function">[[item.function]]</span>
+      </a>
+    </div>
+
+  </template>
+  <script>
+  (function() {
+
+    Polymer({
+      is: 'luminis-colleague-avatar',
+      properties: {
+        item: {
+          type: Object,
+          computed: '_update(items, selected)',
+          observer: '_updated'
+        }
+      },
+
+      _update: function() {
+        return (this.items || []).filter(this.isSelected.bind(this)).shift();
+      },
+
+      _updated: function() {
+        this.href = ['', 'colleagues', this.selected].join('/');
+        this.$.gravatar.attached();
+      },
+      
+      //filter selected colleague from the list
+      isSelected: function(item) {
+        return (this.selected === item.id);
+      }
+
+    });
+  })();
+  </script>
+</dom-module>

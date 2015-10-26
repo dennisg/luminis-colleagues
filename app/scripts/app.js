@@ -26,6 +26,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+
+    app.colleagues = [];
+    app.set('url', '/api/arnhem.json');
+
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -70,5 +74,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.scrollPageToTop = function() {
     app.$.headerPanelMain.scrollToTop(true);
   };
+
 
 })(document);

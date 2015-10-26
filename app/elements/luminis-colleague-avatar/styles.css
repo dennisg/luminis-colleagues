@@ -1,0 +1,62 @@
+
+    a {
+      color: #df770c;
+      text-decoration: none;
+    }
+
+    gravatar-photo {
+      width: 75px;
+      height: 75px;
+        float: right;
+        margin: 0px 0;
+        padding: 3px;
+        border: 1px solid #DDD;
+    }
+
+    .name {
+      font-size: 15px;
+      display: inline-block;
+      width:170px;
+    }
+
+    .email {
+      font-size: 10px;
+      text-overflow: ellipsis;
+      max-width: 175px;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      color: #4d4d4d;
+    }
+
+    .function {
+        color: #f6a800;
+        font-size: 13px;
+        border-top: 1px dotted #ccc;
+        width: 165px;
+        padding-top: 5px;
+        position: absolute;
+        bottom: 4px;
+        left: 15px;
+    }
+
+    .dotted {
+        border-top: 1px dotted #ccc;
+        width: 165px;
+        padding-top: 5px;
+        position: absolute;
+        bottom: 4px;
+        left:15px;
+        
+    }
+
+    .profile {
+        float: left;
+        margin: 20px 20px 0 20px;
+        width: 258px;
+        height: 90px;
+        border: 1px solid #ddd;
+        padding: 5px 5px 0 15px;
+        background-color: white;
+        position:relative;
+    }

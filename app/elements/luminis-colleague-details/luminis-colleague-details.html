@@ -1,0 +1,80 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/mark-down/mark-down.html">
+
+<dom-module id="luminis-colleague-details">
+  <template>
+    <style>
+
+        :host {
+            display: block;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <iron-ajax id="ajax" url="[[url]]" last-response="{{details}}" handle-as="text"></iron-ajax>
+
+    <h2 class="page-title">
+        <span>{{colleague.name}}</span>
+    </h2>
+          
+    <div class="title">
+      Detailed information about <span>[[colleague.name]]</span>
+    </div>
+
+    <p>
+        <mark-down text="[[details]]"></mark-down>
+    </p>
+
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      is: 'luminis-colleague-details',
+
+      properties: {
+        
+        colleague: {
+          type: Object,
+          computed: '_colleague(items, selected)'
+        },
+
+        url: {
+          type: String,
+          computed: '_url(selected)',
+          observer: '_loadDetails'
+        }
+
+      },
+
+      _colleague: function() {
+          return this.items.filter(this._map.bind(this)).shift();
+      },
+
+      _map: function(e) {
+        return (this.selected === e.id);
+      },
+
+      _loadDetails: function() {
+        this.$.ajax.generateRequest();
+      },
+
+      _url: function() {
+          console.log('loading url for', this.selected);
+          return ['', 'api', 'details', this.selected].join('/') + '.md';
+      }
+
+    });
+  })();
+  </script>
+</dom-module>
