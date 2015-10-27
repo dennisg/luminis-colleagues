@@ -1,0 +1,2 @@
+Pien ten Voorde is een Interaction Designer met een achtergrond in Industrieel Ontwerpen. Ze is een enthousiaste en gedreven ontwerper, die kritisch blijft tot het gewenste eindresultaat behaald is.
+Het ontwerpen vanuit de gebruiker en/of merkidentiteit waarbij de gebruiksersbeleving centraal staat, dat is wat ze leuk vindt. Met behulp van gebruikerstesten en interviews is ze in staat de eisen en wensen van de gebruikers in kaart te brengen, die ze vervolgens naar creatieve en onderscheidende ontwerpen vertaalt.

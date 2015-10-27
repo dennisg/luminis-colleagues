@@ -1,0 +1,3 @@
+Een tevreden klant. Dat is eigenlijk waar het om gaat. Mijn collega’s bij Luminis hebben passie voor het vakgebied en gaan voor het resultaat. Nieuwe technologieën laten aansluiten op de werkelijke én toekomstige behoefte van de klant is waar zij voor gaan. Voor mij persoonlijk zit de uitdaging in het samen laten vloeien van klantvragen, technologische mogelijkheden en de juiste mensen om het te realiseren. De huidige technologie maakt veel mogelijk en wellicht is uw onmogelijke vraag toch haalbaar…
+Wellicht even contact leggen??Bert Kramer
+Sales Manager

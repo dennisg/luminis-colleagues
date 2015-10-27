@@ -1,1 +1,2 @@
-**iOS**
+Inmiddels werk ik alweer meer dan 3 jaar met veel plezier bij Luminis, waar ik van mijn hobby mijn werk heb kunnen maken. We doen veel uitdagende projecten op verschillende gebieden.
+Meestal houd ik mij bezig met mobiele technologie, en dan met name het bouwen van apps voor Apple’s iPhone en iPad.Wat ik hierbij belangrijk vind is om voldoende aandacht te (kunnen) geven aan de details; software is pas af als het ook echt “af” is. Hierbij werk ik ook heel graag samen met mijn UX-collega’s om te komen tot een eindproduct dat niet alleen goed werkt, maar ook goed oogt.

@@ -1,0 +1,2 @@
+Na zes jaar gewerkt te hebben bij een van de grote detacheerders, werd het voor mij tijd om te landen bij een klein bedrijf waar men elkaar kent en weet wat men aan elkaar heeft. Die plek heb ik via collega’s gevonden bij Luminis.
+Wat mij in beweging zet? Microsoft, .NET, data com, minimalisme, Windows Phone, Windows 8, mobile development.

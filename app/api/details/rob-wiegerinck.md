@@ -1,0 +1,2 @@
+Als een net afgestudeerde software engineer heb ik mijn eerste thuis bij Luminis gevonden. Door gebruik te maken van de mogelijkheden om door te groeien als werknemer en software engineer binnen Luminis wil ik me voornamelijk verder ontwikkelen binnen Java.
+Ik vind het belangrijk om een brede kennis te hebben als het gaat om software development. En dan niet alleen de technische maar ook de sociale aspecten die hierbij meespelen. Door deze kennis toe te passen kan ik samen met een team een goed product neerzetten waar alle betrokken partijen blij mee zijn.

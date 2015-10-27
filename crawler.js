@@ -1,7 +1,8 @@
 var request = require('request')
   , cheerio = require('cheerio')
   , async = require('async')
-  , seen = {};
+  , seen = {}
+  , fs = require('fs');
 
 var users = [];
 var descriptions = [];
@@ -21,9 +22,15 @@ var objectify = function($, e, queue) {
       queue.push(href);
 }
 
-var descriptify = function(user, $, e) {
+var descriptify = function(id, $, e) {
+  console.log('descriptify', id);
+
   var data = $('.entryCases').children('p').text();
-  descriptions.push({ id: user, description : data.trim() });
+  descriptions.push({ id: id, description : data.trim() });
+  console.log('-------');
+  console.log(id + '.md');
+  fs.writeFileSync('app/api/details/' + id + '.md', data.trim());
+  console.log('-------');
 }
 
 var queue = async.queue(function crawl(url, next) {
@@ -33,7 +40,7 @@ var queue = async.queue(function crawl(url, next) {
   }
   if (!url || seen[url]) return next(null);
 
-  request(url, function(err, response, body){
+  request(url, function(err, response, body) {
     if (err) return next(err);
 
     seen[url] = true;
@@ -44,8 +51,9 @@ var queue = async.queue(function crawl(url, next) {
       objectify($, e, queue);
     })
 
-    $('.entryCases').each(function(i,e){
-      descriptify(users[i].id, $, e);
+    $('.entryCases').each(function(i,e) {
+      var id = url.split('/')[3];
+      descriptify(id, $, e);
     });
 
     next(null);

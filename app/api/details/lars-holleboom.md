@@ -1,0 +1,2 @@
+“Ik hou van zichtbaar resultaat en oplossingsgericht werken”Lars Holleboom is Front-end Developer sinds 2008 en heeft o.a. ervaring in HTML5, SVG, CSS3, Sass, Bootstrap, Javascript met en zonder jQuery, Zepto, BackboneJS, Angular JS, Mustache, Handlebars, PHP, MySQL, XSLT. Een lijst die, als het aan Lars ligt, elke dag wordt uitgebreid.
+Constant op zoek naar creativiteit en perfectionisme, is Lars op 1 augustus 2014 gestart bij Luminis.“My place is between the design and the system. I make a back end usable.”
