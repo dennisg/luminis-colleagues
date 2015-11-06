@@ -1,14 +1,12 @@
-const express = require('express');
-const appengine = require('./libs/appengine.js');
+'use strict'
 
-const app = express();
+var express = require('express');
+var appengine = require('./libs/appengine.js');
+var app = express();
 
-app.disable('etag');
-app.set('trust proxy', true);
 
-app.use(express.static('dist'));
 app.use('/_ah', appengine);
-
+app.use(express.static('dist'));
 
 // Basic error handler
 app.use(function(err, req, res, next) {
@@ -17,6 +15,7 @@ app.use(function(err, req, res, next) {
 });
 
 var server = app.listen(process.env.PORT || 8080, function () {
+
   var host = server.address().address;
   var port = server.address().port;
 

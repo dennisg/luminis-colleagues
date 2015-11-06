@@ -51,6 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endbuild -->
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
+  <!-- DG: this is the statement that imports all required elements for this page -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
 
@@ -124,8 +125,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                 <p class="paper-font-body2">
                   <template is="dom-bind">
+
+                      <!-- DG: this element loads the links data and makes it available through 'links' -->
                       <iron-ajax url="/api/links.json" auto last-response="{{links}}"></iron-ajax>
 
+                      <!-- DG: here, we display them -->
                       <template is="dom-repeat" items="[[links]]" as="item">
                         <p>[<span>[[item.id]]</span>] <a href="[[item.url]]"><span>[[item.title]]</span></a></p>
                       </template>
@@ -144,10 +148,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
 
                 <p>
-                  <!-- our data provider -->
+                  <!-- DG: our data provider -->
                   <luminis-colleagues-data url="[[url]]" items="{{colleagues}}"></luminis-colleagues-data>
 
-                  <!-- show all avatars -->
+                  <!-- DG: show all avatars -->
                   <luminis-colleagues items="[[colleagues]]"></luminis-colleagues>
                 </p>
 
@@ -155,10 +159,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="colleague-info">
               <paper-material elevation="1">
-                  <!-- show the avatar -->
+                  <!-- DG: show the avatar -->
                   <luminis-colleague-avatar items="[[colleagues]]" selected="[[params.id]]" debug="true"></luminis-colleague-avatar>
                   
-                  <!-- show the details -->
+                  <!-- DG: show the details -->
                   <luminis-colleague-details items="[[colleagues]]" selected="{{params.id}}"></luminis-colleague-details>
 
               </paper-material>

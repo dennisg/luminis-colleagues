@@ -32,7 +32,7 @@
     "web-component-tester": "^3.1.3"
   },
   "scripts": {
-    "preview": "gcloud preview app deploy app.yaml",
+    "preview": "gcloud preview app deploy app.yaml --project bright-crossbar-630 --no-promote",
     "deploy": "gulp && gcloud preview app deploy app.yaml",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
