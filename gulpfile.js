@@ -24,6 +24,7 @@ var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 
+
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
   'ie_mob >= 10',
@@ -302,3 +303,31 @@ require('web-component-tester').gulp.init(gulp);
 
 // Load custom tasks from the `tasks` directory
 try { require('require-dir')('tasks'); } catch (err) {}
+
+
+
+gulp.task('appengine:clean', function (cb) {
+  del([
+    'src/main/webapp/**/*'
+  ], { force : false }, cb);
+});
+
+
+gulp.task('appengine:web', ['clean'], function(){
+  return gulp.src([
+    'app/WEB-INF/*.*',
+    ])
+    .pipe(gulp.dest('dist/WEB-INF'));
+});
+
+gulp.task('appengine', ['appengine:web', 'appengine:deploy']);
+
+
+gulp.task('appengine:deploy', ['default'], function() {
+  return gulp.src([
+    'dist/**/*.*'
+    ])
+    .pipe(gulp.dest('src/main/webapp'));
+});
+
+

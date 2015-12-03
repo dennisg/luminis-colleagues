@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.24'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.24'
+    compile 'com.google.appengine:appengine-endpoints:1.9.24'
+    compile 'com.google.appengine:appengine-endpoints-deps:1.9.24'
+    compile 'com.google.appengine.tools:appengine-gcs-client:0.4.3'
+
+    compile 'com.github.davidmoten:geo:0.7'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'org.apache.velocity:velocity:1.7'
+    compile 'javax.servlet:servlet-api:2.5'
+    compile 'com.sun.jersey:jersey-servlet:1.13'
+
+    compile 'io.reactivex:rxjava:1.0.10'
+}
+
+appengine {
+     downloadSdk = true
+
+     update {
+         useJava7 = true
+     }
+
+     appcfg {
+       email = 'dennisg@dennisg.nl'
+       oauth2 = true
+     
+       app {
+          id = 'bright-crossbar-630'
+       }
+       
+	   logs {
+          severity = 1
+       	  outputFile = file('mylogs.txt')
+       }       
+     }
+}
+
+task generateSite(type:Exec) {
+
+    commandLine 'gulp', 'appengine'
+
+    standardOutput = new ByteArrayOutputStream()
+
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+compileJava.dependsOn generateSite

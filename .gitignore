@@ -1,3 +1,6 @@
+.gradle/
+build/
+src/
 node_modules
 dist
 bower_components
